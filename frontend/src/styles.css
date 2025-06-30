@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+:root {
+    /*Figma scheme of colors*/
+    --nordic-red: #A62626; /*Vermelho padrão*/
+    --warm-gray: #EBE8E6;
+    --black-chestnut-oak: #21261B; /*Preto padrão*/
+    --chip-color: #E6DDD5;
+    --modern-clay: #8C8074;
+    --somber-gray: #5D5D5D;
+    --almost-pure-white: #FEFEFE; /*Branco padrão*/
+    --guava: #FF9393; 
+    --mint: #92D8C0;
+    --banana: #FFF2AC;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

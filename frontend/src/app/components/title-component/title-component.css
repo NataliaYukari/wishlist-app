@@ -1,0 +1,19 @@
+p {
+    margin: 0;
+    padding: 5px;
+    color: var(--nordic-red);
+    font-family: 'Roboto Flex', monospace;
+    font-weight: 900;
+}
+
+.text-small {
+    font-size: 3rem;
+}
+
+.text-medium {
+    font-size: 3.3rem;;
+}
+
+.text-large {
+    font-size: 3.5rem;
+}
