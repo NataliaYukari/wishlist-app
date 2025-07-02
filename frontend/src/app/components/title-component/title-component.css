@@ -1,9 +1,9 @@
 p {
-    margin: 0;
     padding: 5px;
     color: var(--nordic-red);
     font-family: 'Roboto Flex', monospace;
     font-weight: 900;
+    margin-top: 10px;
 }
 
 .text-small {
@@ -15,5 +15,5 @@ p {
 }
 
 .text-large {
-    font-size: 3.5rem;
+    font-size: 3.6rem;
 }

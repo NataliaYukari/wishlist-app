@@ -1,13 +1,22 @@
 
-<div id="container">
-    <div id="mainContainer">
-        <div id="login">
+<div class="loginPage">
+<div class="container">
+    <div class="loginContainer">
+        <div class="loginComponents">
             <app-title-component size="large"></app-title-component>
-            <p id="subtitle">Welcome back!</p>
-            <p>Log in to your account:</p>
-            <app-input-component label="E-mail" type="text"/>
-            <app-input-component label="Password" type="password"/>
+            <div class="subtitleContainer">            
+                <p id="subtitle">Welcome back!</p>
+                <p id="loginText">Log in to your account:</p>
+            </div>
+            <div class="inputContainer">
+                <app-input-component label="E-mail" type="text"/>
+                <app-input-component label="Password" type="password"/>
+                <app-button-component buttonLabel="Login" buttonType="login"></app-button-component>
+            </div>
         </div>
     </div>
-
+    <div class="imageContainer">
+        <img src="wishlist-app-login.png" alt="Drawings of shopping bags and gift boxes"/>
+    </div>
+</div>
 </div>
