@@ -1,3 +1,9 @@
 <div>
-    <button [ngClass]="buttonType" class="btn">{{buttonLabel}}</button>
+    <button 
+        [ngClass]="buttonType" 
+        class="btn"
+        (click)= "sendEvent()"
+    > 
+        {{buttonLabel}}
+    </button>
 </div>

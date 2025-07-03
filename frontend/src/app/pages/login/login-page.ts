@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+//import { AuthService } from '../services/auth.service';
 
 import { TitleComponent } from '../../components/title-component/title-component';
 import { InputComponent } from "../../components/input-component/input-component";
@@ -15,7 +16,7 @@ import { ButtonComponent } from "../../components/button-component/button-compon
     imports: [
     CommonModule,
     FormsModule,
-    RouterLink,
+   // Router,
     TitleComponent,
     InputComponent,
     ButtonComponent
@@ -25,7 +26,30 @@ import { ButtonComponent } from "../../components/button-component/button-compon
 export class LoginPage {
   email= '';
   password= '';
-  errorMessage= '';
-  loading= false;
+  message= '';
+  
+  /*
+  constructor (
+    private router: Router,
+    private authService: AuthService,
+  )
 
+  handleLogin() {
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        console.log(response);
+
+        this.AuthService.setToken(response.token);
+
+        if (response.token) {
+          this.message = "Signing in"
+          this.router.navigate(['home']);
+        }
+      },
+
+      error: (error) => {
+        this.message = "Incorrect u-mail or password"
+      }
+    });
+  } */
 }
