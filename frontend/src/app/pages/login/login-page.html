@@ -9,8 +9,8 @@
                 <p id="loginText">Log in to your account:</p>
             </div>
             <div class="inputContainer">
-                <app-input-component label="E-mail" type="text"/>
-                <app-input-component label="Password" type="password"/>
+                <app-input-component label="E-mail" type="text" (valueChange)="email = $event"/>
+                <app-input-component label="Password" type="password" (valueChange)="password = $event"/>
                 <app-button-component buttonLabel="Login" buttonType="login" (onClick)="handleLogin()"></app-button-component>
             </div>
         </div>

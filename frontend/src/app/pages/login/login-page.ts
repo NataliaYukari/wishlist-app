@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -23,6 +24,7 @@ import { AuthService } from '../../services/auth.service';
     InputComponent,
     ButtonComponent,
     MatSnackBarModule,
+    HttpClientModule
 ],
 })
 
@@ -37,6 +39,7 @@ export class LoginPage {
   ) {}
 
   handleLogin() {
+    console.log("Cred: ", this.email, this.password)
     this.authService.login(this.email, this.password).subscribe({
       next: (response) => {
         console.log(response);

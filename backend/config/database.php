@@ -33,8 +33,8 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('MONGO_DB_URI'),
-            'database' => env('wishlist-app')
+            'dsn' => env('MONGODB_URI'),
+            'database' => env('MONGODB_DATABASE')
         ],
 
 

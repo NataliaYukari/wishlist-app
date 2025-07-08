@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { EventEmitter } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +15,6 @@ import { FormControl } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    ReactiveFormsModule
   ],
   templateUrl: './input-component.html',
   styleUrl: './input-component.css',
@@ -27,9 +25,17 @@ import { FormControl } from '@angular/forms';
 export class InputComponent {
   @Input() label: string= '';
   @Input() type: string= 'text';
-  @Input() passwordControl = new FormControl('');
-  
+  @Input() value:string= '';
+
+  @Output() valueChange = new EventEmitter<string>();
+
   hidePassword = true;
+
+  private _value = '';
+  disabled = false;
+
+  onChange = (value: any) => {};
+  onTouched = () => {};
 
   get inputType(): string {
     return this.type === 'password' && this.hidePassword ? 'password' : 'text';
@@ -39,12 +45,8 @@ export class InputComponent {
     this.hidePassword = !this.hidePassword;
   }
 
-  private _value: string = '';
-
-  @Input() get value(): string {
-    return this._value;
-  }
-  set value(newValue: string) {
-    this._value = newValue;
+  onInput(event: Event): void {
+    const val = (event.target as HTMLInputElement).value;
+    this.valueChange.emit(val);
   }
 }
