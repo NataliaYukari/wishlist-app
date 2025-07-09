@@ -5,12 +5,14 @@ import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 
 import { TitleComponent } from '../../components/title-component/title-component';
 import { InputComponent } from '../../components/input-component/input-component';
 import { ButtonComponent } from '../../components/button-component/button-component'; 
 
 import { AuthService } from '../../services/auth.service';
+import { NewUserPage } from '../new-user-page/new-user-page';
 
 @Component({
   selector: 'app-login-page',
@@ -24,7 +26,9 @@ import { AuthService } from '../../services/auth.service';
     InputComponent,
     ButtonComponent,
     MatSnackBarModule,
-    HttpClientModule
+
+    MatDialogModule,
+    HttpClientModule,
 ],
 })
 
@@ -35,7 +39,8 @@ export class LoginPage {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   handleLogin() {
@@ -69,4 +74,15 @@ export class LoginPage {
       }
     });
   } 
+
+  openNewUserModal(): void {
+    const dialogRef = this.dialog.open(NewUserPage, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.router.navigate(['/login']);
+      }
+    });
+  }
 }

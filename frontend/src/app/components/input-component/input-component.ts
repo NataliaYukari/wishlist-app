@@ -25,6 +25,7 @@ import { FormControl } from '@angular/forms';
 export class InputComponent {
   @Input() label: string= '';
   @Input() type: string= 'text';
+  @Input() name: string= '';
   @Input() value:string= '';
 
   @Output() valueChange = new EventEmitter<string>();

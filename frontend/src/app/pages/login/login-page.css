@@ -55,6 +55,22 @@
     object-fit: cover;
 }
 
+.newUserButton {
+    color: var(--nordic-red);
+    background: none;
+    font-family: 'Roboto Flex';
+    font-weight: 600;
+    font-size: 24;
+    border-style: none;
+    margin-top: 20px;
+    padding: 2px;
+}
+
+.newUserButton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
     .container {
         flex-direction: column;

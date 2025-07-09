@@ -11,7 +11,8 @@
             <div class="inputContainer">
                 <app-input-component label="E-mail" type="text" (valueChange)="email = $event"/>
                 <app-input-component label="Password" type="password" (valueChange)="password = $event"/>
-                <app-button-component buttonLabel="Login" buttonType="login" (onClick)="handleLogin()"></app-button-component>
+                <app-button-component buttonLabel="Login" buttonType="login" (onClick)="handleLogin()"/>
+                <button class="newUserButton" (click)="openNewUserModal()">New here? Create your account</button>
             </div>
         </div>
     </div>

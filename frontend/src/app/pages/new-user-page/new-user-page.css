@@ -1,0 +1,48 @@
+.newUserModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.newUserComponents {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  max-width: 400px; 
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column; 
+  width: 100%; 
+}
+
+.subtitleContainer {
+  width: 100%; 
+  text-align: center; 
+}
+
+app-title-component {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#subtitle {
+  font-size: 1.5em;
+  color: var(--black-chestnut-oak);
+  font-weight: 500;
+}
+
+:host ::ng-deep mat-form-field {
+  width: 100%; 
+}
+
+app-button-component button {
+  width: 100%; 
+  margin-top: 20px; 
+}

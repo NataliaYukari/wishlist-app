@@ -1,12 +1,12 @@
 import {
+  BidiModule
+} from "./chunk-GHDGZL5H.js";
+import {
   Platform,
   _CdkPrivateStyleLoader,
   coerceElement,
   coerceNumberProperty
 } from "./chunk-U5TATDUI.js";
-import {
-  BidiModule
-} from "./chunk-GHDGZL5H.js";
 import {
   APP_ID,
   BehaviorSubject,
@@ -1911,6 +1911,14 @@ var A11yModule = class _A11yModule {
   }], () => [], null);
 })();
 
+// node_modules/@angular/cdk/fesm2022/keycodes.mjs
+function hasModifierKey(event, ...modifiers) {
+  if (modifiers.length) {
+    return modifiers.some((modifier) => event[modifier]);
+  }
+  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
+}
+
 // node_modules/@angular/cdk/fesm2022/id-generator-LuoRZSid.mjs
 var counters = {};
 var _IdGenerator = class __IdGenerator {
@@ -2009,14 +2017,6 @@ var Typeahead = class {
     });
   }
 };
-
-// node_modules/@angular/cdk/fesm2022/keycodes.mjs
-function hasModifierKey(event, ...modifiers) {
-  if (modifiers.length) {
-    return modifiers.some((modifier) => event[modifier]);
-  }
-  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
-}
 
 // node_modules/@angular/cdk/fesm2022/coercion/private.mjs
 function coerceObservable(data) {
@@ -2741,6 +2741,7 @@ export {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   ESCAPE,
+  _getFocusedElementPierceShadowDom,
   _getEventTarget,
   normalizePassiveListenerOptions,
   FocusMonitor,
@@ -2748,9 +2749,12 @@ export {
   MediaMatcher,
   BreakpointObserver,
   ObserversModule,
+  InteractivityChecker,
+  FocusTrapFactory,
   LiveAnnouncer,
-  _IdGenerator,
+  A11yModule,
   hasModifierKey,
+  _IdGenerator,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-R6PBWVME.js.map
+//# sourceMappingURL=chunk-EVXQWTNS.js.map

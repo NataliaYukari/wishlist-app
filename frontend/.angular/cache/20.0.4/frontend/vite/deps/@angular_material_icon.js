@@ -6,11 +6,11 @@ import {
 } from "./chunk-V4SDM7JI.js";
 import {
   MatCommonModule
-} from "./chunk-R6PBWVME.js";
+} from "./chunk-EVXQWTNS.js";
+import "./chunk-GHDGZL5H.js";
 import "./chunk-U5TATDUI.js";
 import "./chunk-ZLM35NWO.js";
 import "./chunk-OPGNYZHR.js";
-import "./chunk-GHDGZL5H.js";
 import {
   ChangeDetectionStrategy,
   Component,

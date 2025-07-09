@@ -18,21 +18,23 @@ import {
   MatLabel,
   MatPrefix,
   MatSuffix
-} from "./chunk-WLMCZXBX.js";
+} from "./chunk-YRUSXYEQ.js";
 import {
-  coerceBooleanProperty,
   getSupportedInputTypes
-} from "./chunk-4T4XOGXA.js";
+} from "./chunk-2AQUYH5S.js";
+import {
+  coerceBooleanProperty
+} from "./chunk-XYDOUTEN.js";
 import {
   MatCommonModule,
   _IdGenerator
-} from "./chunk-R6PBWVME.js";
+} from "./chunk-EVXQWTNS.js";
+import "./chunk-GHDGZL5H.js";
 import {
   Platform
 } from "./chunk-U5TATDUI.js";
 import "./chunk-ZLM35NWO.js";
 import "./chunk-OPGNYZHR.js";
-import "./chunk-GHDGZL5H.js";
 import {
   Directive,
   ElementRef,

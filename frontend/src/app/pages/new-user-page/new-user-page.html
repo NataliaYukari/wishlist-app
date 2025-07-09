@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    <div class="newUserModal"> 
+        <div class="newUserComponents">
+            <app-title-component size="medium"></app-title-component>
+            <div class="subtitleContainer">
+                <p id="subtitle">Create your account:</p>
+            </div>
+            <div class="inputContainer">
+                <app-input-component label="E-mail" type="text" (valueChange)="email = $event"/>
+                <app-input-component label="Password" name="password" type="password" (valueChange)="password = $event"/>
+                <app-input-component label="Password" name="confirmPassword" type="password" (valueChange)="confirmPassword = $event"/>
+            </div>
+            <div class="buttonContainer">
+                <app-button-component buttonLabel="Create Account" buttonType="default" (onClick)="handleNewUser()"/>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
