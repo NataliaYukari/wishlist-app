@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 
 use Illuminate\Support\Facades\Log;
 
@@ -16,7 +17,6 @@ class NewUserController extends Controller
     public function newUser(Request $request): JsonResponse
     {
         try {
-            Log::info("NEW USER CONTROLLER");
 
             $request->validate([
                 'email' => ['required', 'email'],
@@ -41,8 +41,6 @@ class NewUserController extends Controller
             ], 422);
 
         } catch (\Exception $e) {
-            Log::error('Registration error: ', $e->getMessage(),
-            ['exception' => $e]);
             return response()->json([
                 'message' => 'Error during registration: ',
                 'error' => $e->getMessage()
