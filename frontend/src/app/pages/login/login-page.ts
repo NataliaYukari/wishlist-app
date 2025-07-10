@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { switchMap } from 'rxjs';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
@@ -44,8 +45,11 @@ export class LoginPage {
   ) {}
 
   handleLogin() {
-    console.log("Cred: ", this.email, this.password)
-    this.authService.login(this.email, this.password).subscribe({
+    console.log("Usermail: ", this.email)
+
+    this.authService.getCsrfCookie().pipe(
+      switchMap(() => this.authService.login(this.email, this.password))
+    ).subscribe({
       next: (response) => {
         console.log(response);
 
@@ -57,7 +61,7 @@ export class LoginPage {
 
           setTimeout(() => {
             snackMessage.dismiss();
-            this.router.navigate(['home']);
+            this.router.navigate(['/home']);
           }, 1000);
 
         } else {

@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
-use Illuminate\Support\Facades\Log;
-
 class NewUserController extends Controller
 {
 
@@ -42,8 +40,7 @@ class NewUserController extends Controller
 
         } catch (\Exception $e) {
             return response()->json([
-                'message' => 'Error during registration: ',
-                'error' => $e->getMessage()
+                'message' => 'Error during registration: '
             ], 500);
         }
     }

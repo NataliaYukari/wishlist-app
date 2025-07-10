@@ -1,6 +1,6 @@
 import {
   MediaMatcher
-} from "./chunk-EVXQWTNS.js";
+} from "./chunk-PSPO3LRZ.js";
 import {
   ANIMATION_MODULE_TYPE,
   InjectionToken,
@@ -9,7 +9,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-B5P2NE6P.js";
+} from "./chunk-L7AQJQLR.js";
 
 // node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
 function coerceCssPixelValue(value) {
@@ -65,17 +65,6 @@ function _animationsDisabled() {
   }
   const mediaMatcher = inject(MediaMatcher);
   return mediaMatcher.matchMedia("(prefers-reduced-motion)").matches;
-}
-
-// node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs
-function _isTestEnvironment() {
-  return (
-    // @ts-ignore
-    typeof __karma__ !== "undefined" && !!__karma__ || // @ts-ignore
-    typeof jasmine !== "undefined" && !!jasmine || // @ts-ignore
-    typeof jest !== "undefined" && !!jest || // @ts-ignore
-    typeof Mocha !== "undefined" && !!Mocha
-  );
 }
 
 // node_modules/@angular/cdk/fesm2022/scrolling-BkvA05C8.mjs
@@ -135,14 +124,25 @@ function getRtlScrollAxisType() {
   return rtlScrollAxisType;
 }
 
+// node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs
+function _isTestEnvironment() {
+  return (
+    // @ts-ignore
+    typeof __karma__ !== "undefined" && !!__karma__ || // @ts-ignore
+    typeof jasmine !== "undefined" && !!jasmine || // @ts-ignore
+    typeof jest !== "undefined" && !!jest || // @ts-ignore
+    typeof Mocha !== "undefined" && !!Mocha
+  );
+}
+
 export {
-  _isTestEnvironment,
   coerceCssPixelValue,
+  coerceBooleanProperty,
   RtlScrollAxisType,
   supportsScrollBehavior,
   getRtlScrollAxisType,
-  coerceBooleanProperty,
+  _isTestEnvironment,
   Breakpoints,
   _animationsDisabled
 };
-//# sourceMappingURL=chunk-XYDOUTEN.js.map
+//# sourceMappingURL=chunk-5EP2NDJO.js.map

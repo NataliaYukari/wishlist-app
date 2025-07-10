@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, tap } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -8,9 +8,15 @@ import { Observable } from "rxjs";
 
 export class AuthService {
 
-    private apiUrl = 'http://127.0.0.1:8000/api/auth'
+    private apiUrl = 'http://127.0.0.1:8000'
 
     constructor(private http: HttpClient) {}
+
+    getCsrfCookie(): Observable<any> {
+        return this.http.get(`${this.apiUrl}/sanctum/csrf-cookie`).pipe(
+            tap(() => console.log('CSRF cookie obtained.'))
+        );
+    }
 
     login(userEmail: string, userPassword: string): Observable<any> {
         console.log("Auth services", userEmail)
@@ -19,7 +25,7 @@ export class AuthService {
             password: userPassword
         };
         
-        return this.http.post<any>(`${this.apiUrl}`, requestBody);
+        return this.http.post<any>(`${this.apiUrl}/api/auth`, requestBody);
     }
 
     setToken(token: string) {
