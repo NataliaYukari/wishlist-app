@@ -1,0 +1,64 @@
+.homePage {
+    background-color: var(--almost-pure-white);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    height: 100%;
+}
+
+.mainContainer {
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.utilityBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filterBy {
+    color: var(--nordic-red);
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+}
+
+.filterBy mat-icon {
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+.filterBy p {
+    font-size: 17px;
+    margin-right: 12px;
+    margin-top: 27px;
+    margin-left: 10px;
+}
+
+.filterBy button {
+    background-color: var(--almost-pure-white);
+    color: var(--nordic-red);
+    text-decoration: underline;
+    border-style: none;
+    font-weight: 600;
+}
+
+.filterBy button:hover {
+    cursor: pointer;
+}
+
+.itemSubtitles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*temporary*/
+    color: var(--modern-clay);
+    font-weight: 600;
+    font-size: 26px;
+}
+

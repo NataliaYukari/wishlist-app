@@ -1,1 +1,36 @@
-<p>home-page works!</p>
+<div class="homePage">
+    <div class="mainContainer">
+        <div class="titleContainer">
+            <app-title-component size="small"></app-title-component>
+            <app-icon-button-component/>
+        </div>
+
+        <div class="utilityBar">
+            <div class="filterBy">
+                <mat-icon aria-label="Filter icon" fontIcon="filter_alt"></mat-icon>
+                <p>Filter by</p>
+                <button>Category</button>
+                <button>Status</button>
+            </div>
+            <app-input-component 
+                label="Search item"
+                type="search"
+                name="searchField"    
+            />
+            <app-button-component buttonLabel="Add New Item" buttonType="default"/>
+        </div>
+
+        <div class="itemSubtitles">
+            <p>Item</p>
+            <p>Category</p>
+            <p>Priority</p>
+            <p>Status</p>
+            <p></p>
+        </div>
+
+        <div class="cardContainer">
+            <app-item-card-component></app-item-card-component>
+
+        </div>
+    </div>
+</div>

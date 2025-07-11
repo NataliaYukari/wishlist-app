@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0.2px;
+    border-color: var(--chip-color);
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(230, 221, 213, 70);
+}
+
+.buttonContainer {
+    margin: 5px;
+}
+
+mat-icon {
+    font-size: 28px;
+}
+
+button {
+    border-style: none;
+    background-color: var(--almost-pure-white);
+    height: 50px;
+    width: auto;
+}
+
+#edit-button {
+    color: var(--modern-clay);
+}
+
+#edit-button:hover {
+    cursor: pointer;
+} 
+
+#delete-button {
+    color: var(--nordic-red);
+}
+
+#delete-button {
+    cursor: pointer;
+}
+

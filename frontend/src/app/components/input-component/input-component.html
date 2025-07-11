@@ -12,6 +12,7 @@
         [attr.aria-label]="'Toggle password visibility'"
         [attr.aria-pressed]="!hidePassword"
     >
-    <mat-icon>{{hidePassword ? 'visibility_off': 'visibility'}}</mat-icon>
+        <mat-icon>{{hidePassword ? 'visibility_off': 'visibility'}}</mat-icon>
     </button>
+    <mat-icon *ngIf="type === 'search'" matSuffix>search</mat-icon>
 </mat-form-field>
