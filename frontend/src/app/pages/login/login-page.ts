@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { switchMap } from 'rxjs';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
@@ -47,9 +46,8 @@ export class LoginPage {
   handleLogin() {
     console.log("Usermail: ", this.email)
 
-    this.authService.getCsrfCookie().pipe(
-      switchMap(() => this.authService.login(this.email, this.password))
-    ).subscribe({
+    this.authService.login(this.email, this.password).subscribe({
+
       next: (response) => {
         console.log(response);
 

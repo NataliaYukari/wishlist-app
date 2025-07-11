@@ -8,15 +8,9 @@ import { Observable, tap } from "rxjs";
 
 export class AuthService {
 
-    private apiUrl = 'http://127.0.0.1:8000'
+    private apiUrl = 'http://localhost:8000'
 
     constructor(private http: HttpClient) {}
-
-    getCsrfCookie(): Observable<any> {
-        return this.http.get(`${this.apiUrl}/sanctum/csrf-cookie`).pipe(
-            tap(() => console.log('CSRF cookie obtained.'))
-        );
-    }
 
     login(userEmail: string, userPassword: string): Observable<any> {
         console.log("Auth services", userEmail)
@@ -25,8 +19,26 @@ export class AuthService {
             password: userPassword
         };
         
-        return this.http.post<any>(`${this.apiUrl}/api/auth`, requestBody);
+        return this.http.post<any>(`${this.apiUrl}/api/login`, requestBody)
+        .pipe(
+            tap(response => {
+                if (response.token) {
+                    this.setToken(response.token);
+                }
+            })
+        );
     }
+
+    getUser(): Observable<any> {
+        const token = this.getToken();
+
+        return this.http.get(`${this.apiUrl}/api/user`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
+
 
     setToken(token: string) {
         localStorage.setItem('accessToken', token);

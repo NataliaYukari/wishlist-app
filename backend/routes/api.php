@@ -9,5 +9,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('newUser', [NewUserController::class, 'newUser']);
-Route::post('auth', [AuthController::class, 'login']);
+Route::post('/newUser', [NewUserController::class, 'newUser']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', [AuthController::class, 'user']);
+});

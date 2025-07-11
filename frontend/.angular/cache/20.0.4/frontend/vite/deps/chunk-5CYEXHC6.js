@@ -1,6 +1,6 @@
 import {
   MediaMatcher
-} from "./chunk-PSPO3LRZ.js";
+} from "./chunk-KBVOEDXO.js";
 import {
   ANIMATION_MODULE_TYPE,
   InjectionToken,
@@ -9,20 +9,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-L7AQJQLR.js";
-
-// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
+} from "./chunk-RCOFFXPT.js";
 
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 var LayoutModule = class _LayoutModule {
@@ -65,6 +52,19 @@ function _animationsDisabled() {
   }
   const mediaMatcher = inject(MediaMatcher);
   return mediaMatcher.matchMedia("(prefers-reduced-motion)").matches;
+}
+
+// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
 }
 
 // node_modules/@angular/cdk/fesm2022/scrolling-BkvA05C8.mjs
@@ -136,13 +136,13 @@ function _isTestEnvironment() {
 }
 
 export {
-  coerceCssPixelValue,
-  coerceBooleanProperty,
   RtlScrollAxisType,
   supportsScrollBehavior,
   getRtlScrollAxisType,
   _isTestEnvironment,
   Breakpoints,
-  _animationsDisabled
+  _animationsDisabled,
+  coerceCssPixelValue,
+  coerceBooleanProperty
 };
-//# sourceMappingURL=chunk-5EP2NDJO.js.map
+//# sourceMappingURL=chunk-5CYEXHC6.js.map
