@@ -3,7 +3,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-RCOFFXPT.js";
+} from "./chunk-FIWRPDVO.js";
 
 // node_modules/@angular/cdk/fesm2022/platform.mjs
 var PlatformModule = class _PlatformModule {
@@ -69,4 +69,4 @@ function getSupportedInputTypes() {
 export {
   getSupportedInputTypes
 };
-//# sourceMappingURL=chunk-VNR2ONFP.js.map
+//# sourceMappingURL=chunk-Q5DPHYHJ.js.map

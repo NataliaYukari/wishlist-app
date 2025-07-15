@@ -30,14 +30,14 @@
 }
 
 .filterBy mat-icon {
-    font-size: 1.8em;
-    margin-top: 20px;
+    font-size: 1.5em;
+    margin-top: 25px;
 }
 
 .filterBy p {
-    font-size: 17px;
+    font-size: 14px;
     margin-right: 12px;
-    margin-top: 27px;
+    margin-top: 28px;
     margin-left: 10px;
 }
 
@@ -57,8 +57,104 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between; /*temporary*/
+    margin-left: 15px;
     color: var(--modern-clay);
     font-weight: 600;
     font-size: 26px;
 }
 
+@media (max-width: 1024px) {
+    .homePage {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .mainContainer {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .filterBy p {
+        font-size: 14px; 
+        margin-top: 20px; 
+    }
+
+    .filterBy mat-icon {
+        font-size: 1.2em; 
+        margin-top: 15px;
+    }
+
+    .itemSubtitles {
+        font-size: 22px; 
+    }
+
+    #searchBar {
+        width: 150px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .homePage {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .mainContainer {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    
+    .utilityBar {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px; 
+    }
+
+    .titleContainer {
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filterBy {
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .filterBy mat-icon,
+    .filterBy p,
+    .filterBy button {
+        margin: 0; 
+        font-size: 15px;
+    }
+
+    .itemSubtitles {
+        flex-wrap: wrap; 
+        font-size: 18px; 
+        gap: 10px; 
+        justify-content: flex-start; 
+    }
+
+    #searchBar {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .homePage {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .mainContainer {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .itemSubtitles {
+        font-size: 16px; 
+    }
+}

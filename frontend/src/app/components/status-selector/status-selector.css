@@ -1,0 +1,36 @@
+/* src/app/components/priority-selector/priority-selector.css */
+
+.priority-selector-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-select {
+  /* Estilo do botão do seletor */
+  width: 150px; /* Largura do seletor */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+
+  /* Remove a seta padrão do navegador para customizar */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+/* Estilo ao passar o mouse */
+.custom-select:hover {
+  border-color: var(--chip-color);
+}
+
+/* Estilo ao focar */
+.custom-select:focus {
+  outline: none; /* Remove o outline padrão do navegador */
+  border-color: var(--modern-clay);
+}

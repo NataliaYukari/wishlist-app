@@ -2,14 +2,14 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-category-component',
+  selector: 'app-item-name',
   imports: [CommonModule],
-  templateUrl: './category-component.html',
-  styleUrl: './category-component.css',
+  templateUrl: './item-name.html',
+  styleUrl: './item-name.css',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class CategoryComponent {
-  @Input() category: string = 'Categoria';
+export class ItemName {
+  @Input() itemName: string = 'Nome do Item'
 }

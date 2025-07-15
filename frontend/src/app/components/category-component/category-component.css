@@ -1,0 +1,14 @@
+.categoryContainer {
+    background-color: var(--chip-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    box-sizing: border-box;
+}
+
+.categoryContainer p {
+    margin: 0;
+    line-height: 1;
+}

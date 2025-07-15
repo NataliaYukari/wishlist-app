@@ -1,0 +1,13 @@
+<div class="priority-selector-container">
+  <select
+    id="priority-select"
+    class="custom-select"
+    name="priority"
+    [(ngModel)]="selectedStatus"  
+    (change)="onSelectChange($event)" 
+    >
+    <option *ngFor="let s of status" [value]="s.value">
+      {{ s.viewValue }}
+    </option>
+  </select>
+</div>

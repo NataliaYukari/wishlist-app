@@ -1,8 +1,8 @@
 <div class="card">
-    <p>Item name</p>
-    <p>Category chip</p>
-    <p>Priority selector</p>
-    <p>Status selector</p>
+    <app-item-name/>
+    <app-category-component/>
+    <app-priority-selector [initialPriority]="priority" (priorityChange)="onPriorityChange($event)"/>
+    <app-status-selector [initialStatus]="status" (statusChange)="onStatusChange($event)"/>
     <div class="buttonContainer">
         <button id="edit-button">
             <mat-icon aria-label="Edit icon">edit</mat-icon>
