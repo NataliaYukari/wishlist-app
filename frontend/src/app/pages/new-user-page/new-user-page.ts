@@ -1,9 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialogContent } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogContent } from '@angular/material/dialog';
 
 import { InputComponent } from '../../components/input-component/input-component';
 import { ButtonComponent } from '../../components/button-component/button-component';
@@ -46,7 +46,7 @@ export class NewUserPage {
 
     this.newUserService.newUser(this.email, this.password).subscribe({
       next: (response) => {
-        console.log("Success:", response);
+        console.log("Success in creating new user:", response);
         this.snackBar.open('New account created','Close', {duration: 2000});
         this.dialogRef.close(true);
       },

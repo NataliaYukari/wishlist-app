@@ -1,42 +1,24 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpInterceptor,
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpErrorResponse
-} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service'; 
+import { HttpRequest, HttpHandlerFn, HttpEvent, HttpInterceptorFn } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthService } from './services/auth.service';
+import { inject } from '@angular/core'; 
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export const AuthInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> => {
+  const authService = inject(AuthService);
+  const token = authService.getToken();
 
-  constructor(private authService: AuthService, private router: Router) {}
+  console.log('Interceptor: Interceptando requisição para:', req.url); 
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = this.authService.getToken();
-
-    let authReq = req;
-    if (token) {
-      authReq = req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-    }
-
-    return next.handle(authReq).pipe(
-      catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) {
-          // Redirects to login
-          this.authService.setToken(''); 
-          this.router.navigate(['/login']);
-        }
-        return throwError(() => error);
-      })
-    );
+  if (token) {
+    req = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}` // Adiciona o token JWT
+      }
+    });
+    console.log('Interceptor: Adicionando token JWT ao cabeçalho.'); 
+  } else {
+    console.log('Interceptor: Nenhum token JWT encontrado.'); 
   }
-}
+
+  return next(req);
+};

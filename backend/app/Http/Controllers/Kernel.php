@@ -17,15 +17,8 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            \Illuminate\Http\Middleware\HandleCors::class,
-            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            
         ],
     ];
 
@@ -37,4 +30,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
     ];
+
+    protected $routeMiddleware = [
+    'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+    'jwt.refresh' => \Tymon\JWTAuth\Http\Middleware\RefreshToken::class,
+];
 }

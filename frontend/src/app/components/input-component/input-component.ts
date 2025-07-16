@@ -24,7 +24,7 @@ import { FormControl } from '@angular/forms';
 
 export class InputComponent {
   @Input() label: string= '';
-  @Input() type: string= 'text';
+  @Input() type: any;
   @Input() name: string= '';
   @Input() value:string= '';
 

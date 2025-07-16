@@ -1,0 +1,35 @@
+.modal {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--black-chesnut-oak);
+} 
+
+.modal h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.newItemModal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.selectors mat-select{
+    margin-bottom: 20px;
+}
+
+app-button-component {
+    display: block;
+    margin-left: 90px;
+
+}

@@ -1,0 +1,22 @@
+<mat-dialog-content class="modal">
+    <h2>Add new item</h2>
+    <div class="newItemModal">
+        <app-input-component label="Name" type="text" (valueChange)="itemName = $event"/>
+        <app-input-component label="Brand" type="text" (valueChange)="brand = $event"/>
+        <app-input-component label="Description" type="text" (valueChange)="description = $event"/>
+        <app-input-component label="Price" type="price" (valueChange)="price = +$event"/>
+        <app-input-component label="Link" type="link" (valueChange)="link = $event"/>
+        <div class="selectors">
+            <mat-label>Category</mat-label>
+            <mat-select name="category" [(ngModel)]="category" (selectionChange)="onCategoryChange($event)" required>
+                <mat-option *ngFor="let cat of categories" [value]="cat.value">{{cat.viewValue}}</mat-option>
+            </mat-select>
+            <mat-label>Priority</mat-label>
+            <mat-select name="priority" [(ngModel)]="priority" (selectionChange)="onPriorityChange($event)" required>
+                <mat-option *ngFor="let pri of priorities" [value]="pri.value">{{pri.viewValue}}</mat-option>
+            </mat-select>
+        </div>
+            <app-button-component buttonLabel="Save" buttonType="default" (onClick)="handleNewItem()"/>
+    </div>
+
+</mat-dialog-content>
