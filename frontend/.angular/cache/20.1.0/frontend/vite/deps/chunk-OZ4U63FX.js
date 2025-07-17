@@ -1,6 +1,6 @@
 import {
   MediaMatcher
-} from "./chunk-QBDHV4JT.js";
+} from "./chunk-FBFO7S5Z.js";
 import {
   ANIMATION_MODULE_TYPE,
   InjectionToken,
@@ -10,19 +10,6 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule
 } from "./chunk-Z33P45C5.js";
-
-// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
 
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 var LayoutModule = class _LayoutModule {
@@ -67,6 +54,19 @@ function _animationsDisabled() {
   return mediaMatcher.matchMedia("(prefers-reduced-motion)").matches;
 }
 
+// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
+}
+
 // node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs
 function _isTestEnvironment() {
   return (
@@ -80,9 +80,9 @@ function _isTestEnvironment() {
 
 export {
   _isTestEnvironment,
-  coerceCssPixelValue,
-  coerceBooleanProperty,
   Breakpoints,
-  _animationsDisabled
+  _animationsDisabled,
+  coerceCssPixelValue,
+  coerceBooleanProperty
 };
-//# sourceMappingURL=chunk-B3GN5PK5.js.map
+//# sourceMappingURL=chunk-OZ4U63FX.js.map

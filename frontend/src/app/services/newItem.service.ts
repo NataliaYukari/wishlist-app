@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { WishlistItem } from "../item.interface";
@@ -18,4 +18,12 @@ export class NewItemService {
 
         return this.http.post<any>(`${this.apiUrl}`, newItemData);
     }
+
+    updateItem(id: string, updatedItem: Partial<WishlistItem>): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put(`${this.apiUrl}/${id}`, updatedItem, { headers });
+  }
 }

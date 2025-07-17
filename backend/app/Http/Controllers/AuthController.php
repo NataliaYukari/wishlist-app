@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response().json(['message' => 'Incorrect e-mail or password'], 401);
+                return response()->json(['message' => 'Incorrect e-mail or password'], 401);
             }
 
             //Searches for authenticated user

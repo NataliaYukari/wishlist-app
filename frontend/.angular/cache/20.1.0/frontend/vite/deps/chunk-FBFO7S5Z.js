@@ -1,14 +1,14 @@
 import {
-  _CdkPrivateStyleLoader
-} from "./chunk-YCBTBJSQ.js";
-import {
   BidiModule
 } from "./chunk-455OF4TV.js";
+import {
+  _CdkPrivateStyleLoader
+} from "./chunk-YCBTBJSQ.js";
 import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-SH7KG75T.js";
+} from "./chunk-MDXTZFO6.js";
 import {
   APP_ID,
   CSP_NONCE,
@@ -1922,14 +1922,6 @@ var A11yModule = class _A11yModule {
   }], () => [], null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/keycodes.mjs
-function hasModifierKey(event, ...modifiers) {
-  if (modifiers.length) {
-    return modifiers.some((modifier) => event[modifier]);
-  }
-  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
-}
-
 // node_modules/@angular/cdk/fesm2022/id-generator-LuoRZSid.mjs
 var counters = {};
 var _IdGenerator = class __IdGenerator {
@@ -1964,6 +1956,14 @@ var _IdGenerator = class __IdGenerator {
     }]
   }], null, null);
 })();
+
+// node_modules/@angular/cdk/fesm2022/keycodes.mjs
+function hasModifierKey(event, ...modifiers) {
+  if (modifiers.length) {
+    return modifiers.some((modifier) => event[modifier]);
+  }
+  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
+}
 
 // node_modules/@angular/cdk/fesm2022/typeahead-9ZW4Dtsf.mjs
 var DEFAULT_TYPEAHEAD_DEBOUNCE_INTERVAL_MS = 200;
@@ -3117,11 +3117,11 @@ export {
   FocusTrapFactory,
   LiveAnnouncer,
   A11yModule,
-  hasModifierKey,
   _IdGenerator,
+  hasModifierKey,
   ActiveDescendantKeyManager,
   addAriaReferencedId,
   removeAriaReferencedId,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-QBDHV4JT.js.map
+//# sourceMappingURL=chunk-FBFO7S5Z.js.map

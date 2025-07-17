@@ -14,6 +14,9 @@ import { ButtonComponent } from '../../components/button-component/button-compon
 import { WishlistItem } from '../../item.interface';
 import { NewItemService } from '../../services/newItem.service';
 
+import { Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 interface Category {
   value: string;
   viewValue: string;
@@ -42,11 +45,13 @@ interface Priority {
 })
 
 export class NewItemPage {
+  id: string = '';
   itemName: string = '';
   brand: string = '';
   description: string = '';
   price: number = 0.00;
   link: string = '';
+  status: string = '';
   category: string = '';
   priority: string = '';
 
@@ -69,7 +74,8 @@ export class NewItemPage {
   constructor(
     private newItemService: NewItemService,
     private snackBar: MatSnackBar,
-    public dialogRef: MatDialogRef<NewItemPage>
+    public dialogRef: MatDialogRef<NewItemPage>,
+    @Inject(MAT_DIALOG_DATA) public data: WishlistItem | null
   ) {}
 
   ngOnInit(): void {
@@ -79,6 +85,26 @@ export class NewItemPage {
     if (!this.priority && this.priorities.length > 0) {
       this.priority = this.priorities[0].value;
     }
+    if (this.data) {
+    // Modo de edição
+    this.id = this.data.id;
+    this.itemName = this.data.itemName;
+    // this.brand = this.data.brand;
+    // this.description = this.data.description;
+    // this.price = this.data.price;
+    // this.link = this.data.link;
+    this.status = this.data.status;
+    this.category = this.data.category;
+    this.priority = this.data.priority;
+  } else {
+    // Modo de criação
+    if (!this.category && this.categories.length > 0) {
+      this.category = this.categories[0].value;
+    }
+    if (!this.priority && this.priorities.length > 0) {
+      this.priority = this.priorities[0].value;
+    }
+  }
   }
 
   onCategoryChange(event: any): void {
@@ -98,14 +124,20 @@ export class NewItemPage {
     }
 
     const newItemData: WishlistItem = {
+      id: this.id,
       itemName: this.itemName,
       brand: this.brand,
       description: this.description,
       price: this.price,
       link: this.link,
+      status: this.status,
       category: this.category,
       priority: this.priority
     };
+
+    const request = this.id
+    ? this.newItemService.updateItem(this.id, newItemData)
+    : this.newItemService.newItem(newItemData);
 
     this.newItemService.newItem(newItemData).subscribe({
       next: (response) => {

@@ -23,9 +23,9 @@ export class PrioritySelector implements OnInit {
   @Output() priorityChange = new EventEmitter<string>();
 
   priorities: Priority[] = [
-    {value: 'low', viewValue: 'Low'},
-    {value: 'medium', viewValue: 'Medium'},
-    {value: 'high', viewValue: 'High'}
+    {value: 'Low', viewValue: 'Low'},
+    {value: 'Medium', viewValue: 'Medium'},
+    {value: 'High', viewValue: 'High'}
   ];
 
   selectedPriority: string;

@@ -24,3 +24,10 @@ Route::middleware('auth:api')->group(function () {
 Route::middleware('jwt.auth')->group(function () {
     Route::post('/newItem', [ItemController::class, 'newItem']);
 });
+
+Route::middleware('auth:api')->get('/items', [ItemController::class, 'getItems']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::delete('/items/{id}', [ItemController::class, 'deleteItem']);
+    Route::put('/items/{id}', [ItemController::class, 'updateItem']); 
+});

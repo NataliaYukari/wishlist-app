@@ -16,7 +16,7 @@
                 id="searchBar"
                 label="Search item"
                 type="search"
-                name="searchField"    
+                name="searchField"     
             />
             <app-button-component buttonLabel="Add New Item" buttonType="default" (onClick)="openNewItemModal()"/>
         </div>
@@ -29,9 +29,11 @@
             <p></p>
         </div>
 
-        <div class="cardContainer">
-            <app-item-card-component></app-item-card-component>
-
+        <div class="item-list">
+            <app-item-card-component
+                *ngFor="let item of items"
+                [item]="item" (deleteItem)="onDeleteItem($event)" (editItem)="onEditItem($event)">
+            </app-item-card-component>
         </div>
     </div>
 </div>

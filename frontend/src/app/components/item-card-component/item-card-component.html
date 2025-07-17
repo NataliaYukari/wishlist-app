@@ -1,14 +1,14 @@
 <div class="card">
-    <app-item-name/>
-    <app-category-component/>
-    <app-priority-selector [initialPriority]="priority" (priorityChange)="onPriorityChange($event)"/>
-    <app-status-selector [initialStatus]="status" (statusChange)="onStatusChange($event)"/>
+    <app-item-name [itemName]="item.itemName"/>
+    <app-category-component [category]="item.category"/>
+    <app-priority-selector [initialPriority]="item.priority" (priorityChange)="onPriorityChange($event)"/>
+    <app-status-selector [initialStatus]="item.status" (statusChange)="onStatusChange($event)"/>
     <div class="buttonContainer">
         <button id="edit-button">
-            <mat-icon aria-label="Edit icon">edit</mat-icon>
+            <mat-icon aria-label="Edit icon" (click)="onEditItem()">edit</mat-icon>
         </button>
         <button id="delete-button">
-            <mat-icon aria-label="Delete icon">delete</mat-icon>
+            <mat-icon aria-label="Delete icon" (click)="onDeleteItem()">delete</mat-icon>
         </button>
     </div>
 </div>

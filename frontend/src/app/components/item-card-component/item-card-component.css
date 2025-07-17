@@ -10,6 +10,16 @@
     align-items: center;
 }
 
+.card > app-item-name {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.card > app-category-component {
+  width: 100px; 
+  flex-shrink: 0;
+}
+
 .buttonContainer {
     margin: 5px;
 }
