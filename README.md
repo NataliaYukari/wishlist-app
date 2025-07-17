@@ -24,4 +24,11 @@ Além das operações de exclusão e edição de um item, a alteração do statu
 - Angular Material for stylization
 - Laravel (API REST) for back-end
 
+## Preview
+Login page:
+<img width="1902" height="948" alt="image" src="https://github.com/user-attachments/assets/33c86f1a-5878-4ddb-b666-2be7e485cf9c" />
+
+Home page:
+<img width="1915" height="945" alt="image" src="https://github.com/user-attachments/assets/f2db5957-5b6c-4c7a-984b-7506c8d20245" />
+
 
